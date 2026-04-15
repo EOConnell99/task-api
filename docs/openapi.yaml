@@ -3,7 +3,7 @@ info:
   title: Task API
   version: 1.0.0
 servers:
-  - url: http://localhost:3000
+  - url: http://localhost:8080
     description: Local development servers
 tags:
   - name: Tasks
@@ -17,14 +17,14 @@ paths:
       tags:
         - Tasks
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Task'
+                  $ref: "#/components/schemas/Task"
     post:
       summary: Create a new task
       tags:
@@ -34,15 +34,15 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Task'
+              $ref: "#/components/schemas/Task"
       responses:
-        '201':
+        "201":
           description: Task created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Task'
-        '400':
+                $ref: "#/components/schemas/Task"
+        "400":
           description: Bad request due to invalid data
           content:
             application/json:
@@ -57,7 +57,7 @@ paths:
                       type: string
                 example:
                   errors:
-                    - 'Title must be at least 3 characters'
+                    - "Title must be at least 3 characters"
   /health:
     get:
       summary: Health Check
@@ -65,7 +65,7 @@ paths:
       tags:
         - Monitoring
       responses:
-        '200':
+        "200":
           description: API is running successfully
           content:
             application/json:
