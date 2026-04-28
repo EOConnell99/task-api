@@ -5,7 +5,7 @@ info:
 servers:
   - url: http://localhost:8080
     description: Local development server
-  - url: https://task-api-service-c2zf.onrender.com
+  - url: https://task-api-service-c2zf.onrender.com/api
     description: Production server
 tags:
   - name: Tasks
@@ -72,7 +72,8 @@ paths:
   /health:
     get:
       summary: Health Check
-      description: Returns the current status of the API. Used by Render to verify that the service is running.
+      description: Returns the current status of the API. Used by Render to verify
+        that the service is running.
       tags:
         - Monitoring
       responses:
